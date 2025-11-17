@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>React App</title>
+</head>
+<body>
+  <div id="root"></div>
 
+  <!-- React と ReactDOM を読み込む -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  
+  <!-- Babel を読み込む（JSXを使うため） -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- あなたのReactコード -->
+  <script type="text/babel">
+    function App() {
+      const [count, setCount] = React.useState(0);
+      
+      return (
+        <div>
+          <h1>カウンター: {count}</h1>
+          <button onClick={() => setCount(count + 1)}>
+            クリック
+          </button>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
